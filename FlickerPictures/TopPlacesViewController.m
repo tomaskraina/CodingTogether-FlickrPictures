@@ -8,6 +8,7 @@
 
 #import "TopPlacesViewController.h"
 #import "FlickrFetcher.h"
+#import "DetailPlaceViewController.h"
 
 @interface TopPlacesViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSArray *places;
@@ -75,7 +76,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -84,7 +85,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Top Place Table Cell";
+    static NSString *CellIdentifier = @"Place Table Cell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
@@ -98,6 +99,16 @@
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UIStoryboardSegue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show photos at location"]) {
+        if ([sender isKindOfClass:[UITableViewCell class]]) {
+            DetailPlaceViewController *detailViewController = (DetailPlaceViewController *)segue.destinationViewController;
+            detailViewController.locationInfo = [self.places objectAtIndex:[self.tableView indexPathForCell:sender].row];
+        }
+    }
+}
 
 @end

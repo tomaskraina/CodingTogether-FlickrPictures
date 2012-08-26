@@ -21,6 +21,7 @@
 		2C6EAC0815EAC31A00B3EABC /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EAC0715EAC31A00B3EABC /* second.png */; };
 		2C6EAC0A15EAC31A00B3EABC /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EAC0915EAC31A00B3EABC /* second@2x.png */; };
 		2C6EAC1515EAC47D00B3EABC /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC1415EAC47D00B3EABC /* FlickrFetcher.m */; };
+		2C6EAC1815EAD09400B3EABC /* DetailPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		2C6EAC1215EAC47D00B3EABC /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		2C6EAC1315EAC47D00B3EABC /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
 		2C6EAC1415EAC47D00B3EABC /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPlaceViewController.h; sourceTree = "<group>"; };
+		2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPlaceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				2C6EABFA15EAC31A00B3EABC /* MainStoryboard.storyboard */,
 				2C6EABFD15EAC31A00B3EABC /* TopPlacesViewController.h */,
 				2C6EABFE15EAC31A00B3EABC /* TopPlacesViewController.m */,
+				2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */,
+				2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */,
 				2C6EAC0415EAC31A00B3EABC /* RecentsViewController.h */,
 				2C6EAC0515EAC31A00B3EABC /* RecentsViewController.m */,
 				2C6EAC1115EAC47D00B3EABC /* FlickrFetcher */,
@@ -209,6 +214,7 @@
 				2C6EABFF15EAC31A00B3EABC /* TopPlacesViewController.m in Sources */,
 				2C6EAC0615EAC31A00B3EABC /* RecentsViewController.m in Sources */,
 				2C6EAC1515EAC47D00B3EABC /* FlickrFetcher.m in Sources */,
+				2C6EAC1815EAD09400B3EABC /* DetailPlaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
