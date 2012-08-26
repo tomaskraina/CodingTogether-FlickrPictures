@@ -1,14 +1,14 @@
 //
-//  FlickerPicturesAppDelegate.m
-//  FlickerPictures
+//  FlickrPicturesAppDelegate.m
+//  FlickrPictures
 //
 //  Created by Tom Kraina on 26.08.2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FlickerPicturesAppDelegate.h"
+#import "FlickrPicturesAppDelegate.h"
 
-@implementation FlickerPicturesAppDelegate
+@implementation FlickrPicturesAppDelegate
 
 @synthesize window = _window;
 
