@@ -22,6 +22,7 @@
 		2C6EAC0A15EAC31A00B3EABC /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EAC0915EAC31A00B3EABC /* second@2x.png */; };
 		2C6EAC1515EAC47D00B3EABC /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC1415EAC47D00B3EABC /* FlickrFetcher.m */; };
 		2C6EAC1815EAD09400B3EABC /* DetailPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */; };
+		2C6EAC2F15EB641800B3EABC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC2E15EB641800B3EABC /* PhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		2C6EAC1415EAC47D00B3EABC /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPlaceViewController.h; sourceTree = "<group>"; };
 		2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPlaceViewController.m; sourceTree = "<group>"; };
+		2C6EAC2D15EB641700B3EABC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		2C6EAC2E15EB641800B3EABC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				2C6EABFE15EAC31A00B3EABC /* TopPlacesViewController.m */,
 				2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */,
 				2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */,
+				2C6EAC2D15EB641700B3EABC /* PhotoViewController.h */,
+				2C6EAC2E15EB641800B3EABC /* PhotoViewController.m */,
 				2C6EAC0415EAC31A00B3EABC /* RecentsViewController.h */,
 				2C6EAC0515EAC31A00B3EABC /* RecentsViewController.m */,
 				2C6EAC1115EAC47D00B3EABC /* FlickrFetcher */,
@@ -215,6 +220,7 @@
 				2C6EAC0615EAC31A00B3EABC /* RecentsViewController.m in Sources */,
 				2C6EAC1515EAC47D00B3EABC /* FlickrFetcher.m in Sources */,
 				2C6EAC1815EAD09400B3EABC /* DetailPlaceViewController.m in Sources */,
+				2C6EAC2F15EB641800B3EABC /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

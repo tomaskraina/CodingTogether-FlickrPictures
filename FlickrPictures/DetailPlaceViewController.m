@@ -8,6 +8,7 @@
 
 #import "DetailPlaceViewController.h"
 #import "FlickrFetcher.h"
+#import "PhotoViewController.h"
 
 @interface DetailPlaceViewController()
 @property (strong, nonatomic) NSArray *photos;
@@ -44,7 +45,7 @@
     [super viewWillAppear:animated];
     
     // download photos from selected location
-    dispatch_queue_t downloadQueue = dispatch_queue_create("photos at place downloader", nil);
+    dispatch_queue_t downloadQueue = dispatch_queue_create("photos at place downloader", NULL);
     dispatch_async(downloadQueue, ^{
         self.photos = [FlickrFetcher photosInPlace:self.locationInfo maxResults:50];
     });
@@ -71,7 +72,7 @@
 	return YES;
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -92,67 +93,26 @@
     cell.textLabel.text = [photoInfo objectForKey:FLICKR_PHOTO_TITLE];
     cell.detailTextLabel.text = [photoInfo objectForKey:FLICKR_PHOTO_DESCRIPTION];
 
-    if (!cell.textLabel.text.length && cell.detailTextLabel.text.length) {
+    if (!cell.textLabel.text.length) {
         cell.textLabel.text = cell.detailTextLabel.text;
         cell.detailTextLabel.text = nil;
     }
-    else if (!cell.textLabel.text.length) {
-        cell.textLabel.text = NSLocalizedString(@"Unknown Place", @"Photo Table Cell Unknown Place");
+    if (!cell.textLabel.text.length) {
+        cell.textLabel.text = NSLocalizedString(@"Unknown Title", @"Photo Table Cell Unknown Title");
     }
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+#pragma mark - UIStoryboardSegue
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if ([segue.identifier isEqualToString:@"Show photo"]) {
+        PhotoViewController *photoViewController = (PhotoViewController *)segue.destinationViewController;
+        photoViewController.photoInfo = [self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row];
+    }
 }
 
 @end

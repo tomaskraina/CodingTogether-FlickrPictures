@@ -63,11 +63,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo Table Cell" textLabel="cy0-hP-BZR" detailTextLabel="QyD-1c-hNN" style="IBUITableViewCellStyleSubtitle" id="rgu-aV-6iB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo Table Cell" textLabel="cy0-hP-BZR" detailTextLabel="QyD-1c-hNN" style="IBUITableViewCellStyleSubtitle" id="rgu-aV-6iB">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cy0-hP-BZR">
@@ -87,6 +87,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="lfj-6j-O9k" kind="push" identifier="Show photo" id="HvP-W7-sJK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -98,6 +101,33 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1466" y="-103"/>
+        </scene>
+        <scene sceneID="faI-7Z-lQO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STs-K3-Iol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="lfj-6j-O9k" customClass="PhotoViewController" sceneMemberID="viewController">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="-5" id="aBu-xg-Pn0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" id="jLq-ib-wZU">
+                                <rect key="frame" x="-1" y="1" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="lfj-6j-O9k" id="J2i-i6-vdq"/>
+                        </connections>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="xLb-B4-b0t"/>
+                    <connections>
+                        <outlet property="imageView" destination="jLq-ib-wZU" id="dwl-M5-yib"/>
+                        <outlet property="scrollView" destination="aBu-xg-Pn0" id="40L-vI-ERv"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1898" y="-103"/>
         </scene>
         <scene sceneID="13">
             <objects>
@@ -172,6 +202,13 @@
     <classes>
         <class className="DetailPlaceViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailPlaceViewController.h"/>
+        </class>
+        <class className="PhotoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
         <class className="RecentsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentsViewController.h"/>
