@@ -26,7 +26,7 @@
 
 - (void)loadDownloadedPhotos
 {
-    self.photos = [[NSUserDefaults standardUserDefaults] objectForKey:PHOTOS_PERSISTENCE_KEY];
+    self.photos = [[NSUserDefaults standardUserDefaults] arrayForKey:PHOTOS_PERSISTENCE_KEY];
 }
 
 - (void)startDownloadingPhotos
