@@ -88,8 +88,17 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [[self.photos objectAtIndex:indexPath.row] objectForKey:FLICKR_PHOTO_TITLE];
-    cell.detailTextLabel.text = [[self.photos objectAtIndex:indexPath.row] objectForKey:FLICKR_PHOTO_DESCRIPTION];
+    NSDictionary *photoInfo = [self.photos objectAtIndex:indexPath.row];
+    cell.textLabel.text = [photoInfo objectForKey:FLICKR_PHOTO_TITLE];
+    cell.detailTextLabel.text = [photoInfo objectForKey:FLICKR_PHOTO_DESCRIPTION];
+
+    if (!cell.textLabel.text.length && cell.detailTextLabel.text.length) {
+        cell.textLabel.text = cell.detailTextLabel.text;
+        cell.detailTextLabel.text = nil;
+    }
+    else if (!cell.textLabel.text.length) {
+        cell.textLabel.text = NSLocalizedString(@"Unknown Place", @"Photo Table Cell Unknown Place");
+    }
     
     return cell;
 }
