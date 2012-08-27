@@ -12,14 +12,35 @@
 
 @interface TopPlacesViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSArray *places;
+@property (strong, nonatomic) NSDictionary *placesByCountries;
+@property (strong, nonatomic) NSOrderedSet *countries;
 @end
 
 @implementation TopPlacesViewController
 @synthesize places = _places;
+@synthesize placesByCountries = _placesByCountries;
+@synthesize countries = _countries;
 
 - (void)setPlaces:(NSArray *)places
 {
     _places = places;
+    
+    NSMutableOrderedSet *countries = [NSMutableOrderedSet orderedSet];
+    NSMutableDictionary *placesByCountry = [NSMutableDictionary dictionary];
+    for (NSDictionary *place in places) {
+        NSString *placeName = [place objectForKey:FLICKR_PLACE_NAME];
+        NSUInteger positionOfLastComma = [placeName rangeOfString:@"," options:NSBackwardsSearch].location;
+        NSString *country = [placeName substringFromIndex:positionOfLastComma+1];
+        [countries addObject:country];
+        
+        NSMutableArray *arrayForCountry = [placesByCountry objectForKey:country];
+        if (!arrayForCountry) arrayForCountry = [NSMutableArray array];
+        [arrayForCountry addObject:place];
+        [placesByCountry setObject:arrayForCountry forKey:country];
+    }
+    self.countries = countries;
+    self.placesByCountries = placesByCountry;
+    
     [self.tableView reloadData];
 }
 
@@ -78,9 +99,20 @@
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.countries.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.places.count;
+    NSString *country = [self.countries objectAtIndex:section];
+    return [[self.placesByCountries objectForKey:country] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.countries objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,7 +123,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    NSString *place = [[self.places objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
+    NSString *country = [self.countries objectAtIndex:indexPath.section];
+    NSArray *placesForCountry = [self.placesByCountries objectForKey:country];
+    NSString *place = [[placesForCountry objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
     NSUInteger positionOfFirstComma = [place rangeOfString:@","].location;
     cell.textLabel.text = [place substringToIndex:positionOfFirstComma];
     cell.detailTextLabel.text = [place substringFromIndex:positionOfFirstComma+2];
@@ -105,8 +139,11 @@
 {
     if ([segue.identifier isEqualToString:@"Show photos at location"]) {
         if ([sender isKindOfClass:[UITableViewCell class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            NSString *country = [self.countries objectAtIndex:indexPath.section];
+            NSArray *placesForCountry = [self.placesByCountries objectForKey:country];
             DetailPlaceViewController *detailViewController = (DetailPlaceViewController *)segue.destinationViewController;
-            detailViewController.locationInfo = [self.places objectAtIndex:[self.tableView indexPathForCell:sender].row];
+            detailViewController.locationInfo = [placesForCountry objectAtIndex:indexPath.row];
         }
     }
 }
