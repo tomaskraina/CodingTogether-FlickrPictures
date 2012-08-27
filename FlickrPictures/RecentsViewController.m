@@ -21,7 +21,10 @@
 
 - (void)saveDownloadedPhotos
 {
-    [[NSUserDefaults standardUserDefaults] setObject:self.photos forKey:PHOTOS_PERSISTENCE_KEY];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.photos forKey:PHOTOS_PERSISTENCE_KEY];
+    [defaults synchronize];
+    
 }
 
 - (void)loadDownloadedPhotos
