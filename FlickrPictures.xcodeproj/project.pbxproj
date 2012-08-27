@@ -24,6 +24,7 @@
 		2C6EAC1815EAD09400B3EABC /* DetailPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */; };
 		2C6EAC2F15EB641800B3EABC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC2E15EB641800B3EABC /* PhotoViewController.m */; };
 		2C6EAC3215EB77A600B3EABC /* UITabBarController+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC3115EB77A500B3EABC /* UITabBarController+Rotation.m */; };
+		2C6EAC3515EB7B7100B3EABC /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		2C6EAC2E15EB641800B3EABC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		2C6EAC3015EB77A500B3EABC /* UITabBarController+Rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Rotation.h"; sourceTree = "<group>"; };
 		2C6EAC3115EB77A500B3EABC /* UITabBarController+Rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Rotation.m"; sourceTree = "<group>"; };
+		2C6EAC3315EB7B7000B3EABC /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				2C6EABFE15EAC31A00B3EABC /* TopPlacesViewController.m */,
 				2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */,
 				2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */,
+				2C6EAC3315EB7B7000B3EABC /* PhotosViewController.h */,
+				2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */,
 				2C6EAC2D15EB641700B3EABC /* PhotoViewController.h */,
 				2C6EAC2E15EB641800B3EABC /* PhotoViewController.m */,
 				2C6EAC0415EAC31A00B3EABC /* RecentsViewController.h */,
@@ -227,6 +232,7 @@
 				2C6EAC1815EAD09400B3EABC /* DetailPlaceViewController.m in Sources */,
 				2C6EAC2F15EB641800B3EABC /* PhotoViewController.m in Sources */,
 				2C6EAC3215EB77A600B3EABC /* UITabBarController+Rotation.m in Sources */,
+				2C6EAC3515EB7B7100B3EABC /* PhotosViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

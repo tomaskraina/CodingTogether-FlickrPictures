@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhotosViewController.h"
 
-@interface DetailPlaceViewController : UITableViewController
+@interface DetailPlaceViewController : PhotosViewController
 @property (copy, nonatomic) NSDictionary *locationInfo;
 @end
