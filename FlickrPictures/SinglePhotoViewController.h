@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoViewController : UIViewController
+@interface SinglePhotoViewController : UIViewController
 @property (strong, nonatomic) NSDictionary *photoInfo;
 @end

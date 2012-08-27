@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "PhotoViewController.h"
+#import "SinglePhotoViewController.h"
 #import "FlickrFetcher.h"
 
-@interface PhotoViewController() <UIScrollViewDelegate>
+@interface SinglePhotoViewController() <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
-@implementation PhotoViewController
+@implementation SinglePhotoViewController
 @synthesize scrollView = _scrollView;
 @synthesize imageView = _imageView;
 @synthesize photoInfo = _photoInfo;

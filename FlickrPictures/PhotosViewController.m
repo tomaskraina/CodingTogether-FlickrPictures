@@ -8,7 +8,7 @@
 
 #import "PhotosViewController.h"
 #import "FlickrFetcher.h"
-#import "PhotoViewController.h"
+#import "SinglePhotoViewController.h"
 
 @interface PhotosViewController() <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -82,7 +82,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show photo"]) {
-        PhotoViewController *photoViewController = (PhotoViewController *)segue.destinationViewController;
+        SinglePhotoViewController *photoViewController = (SinglePhotoViewController *)segue.destinationViewController;
         photoViewController.photoInfo = [self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row];
     }
 }

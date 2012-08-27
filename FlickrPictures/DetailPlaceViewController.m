@@ -8,7 +8,7 @@
 
 #import "DetailPlaceViewController.h"
 #import "FlickrFetcher.h"
-#import "PhotoViewController.h"
+#import "SinglePhotoViewController.h"
 
 @implementation DetailPlaceViewController
 @synthesize locationInfo = _locationInfo;
