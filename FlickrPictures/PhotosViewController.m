@@ -28,6 +28,7 @@
 {
     _photos = photos;
     [self.tableView reloadData];
+    [self.activityIndicator stopAnimating];
 }
 
 - (void)startDownloadingPhotos
@@ -41,6 +42,7 @@
 {
     [super viewWillAppear:animated];
     
+    [self.activityIndicator startAnimating];
     [self startDownloadingPhotos];
 }
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityIndicatorTableViewController.h"
 
-@interface PhotosViewController : UITableViewController
+@interface PhotosViewController : ActivityIndicatorTableViewController
 @property (strong, nonatomic) NSArray *photos;
 // implement this method in your subclass
 - (void)startDownloadingPhotos;

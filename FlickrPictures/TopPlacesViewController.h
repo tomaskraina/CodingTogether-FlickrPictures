@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityIndicatorTableViewController.h"
 
-@interface TopPlacesViewController : UITableViewController
+@interface TopPlacesViewController : ActivityIndicatorTableViewController
 
 @end

@@ -42,6 +42,7 @@
     self.placesByCountries = placesByCountry;
     
     [self.tableView reloadData];
+    [self.activityIndicator stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +71,7 @@
     [super viewWillAppear:animated];
     
     // download the list of photos from flicker in another thread
+    [self.activityIndicator startAnimating];
     dispatch_queue_t downloadQueue = dispatch_queue_create("top places downloader", NULL);
     dispatch_async(downloadQueue, ^{
         self.places = [FlickrFetcher topPlaces];
