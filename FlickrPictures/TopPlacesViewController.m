@@ -41,8 +41,10 @@
     self.countries = countries;
     self.placesByCountries = placesByCountry;
     
-    [self.tableView reloadData];
-    [self.activityIndicator stopAnimating];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        [self.activityIndicator stopAnimating];
+    });
 }
 
 - (void)didReceiveMemoryWarning
