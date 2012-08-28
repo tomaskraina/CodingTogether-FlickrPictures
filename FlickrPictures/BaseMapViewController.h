@@ -10,5 +10,5 @@
 #import <MapKit/MapKit.h>
 
 @interface BaseMapViewController : UIViewController <MKMapViewDelegate>
-@property (weak, nonatomic) MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
