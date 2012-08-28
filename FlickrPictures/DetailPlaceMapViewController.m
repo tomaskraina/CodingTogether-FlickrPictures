@@ -7,16 +7,20 @@
 //
 
 #import "DetailPlaceMapViewController.h"
+#import "FlickrFetcher.h"
+#define DEFAULT_CITY_MAP_RADIUS 30000 // in meters
 
 @implementation DetailPlaceMapViewController
+@synthesize locationInfo = _locationInfo;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (void)setLocationInfo:(NSDictionary *)locationInfo
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (![_locationInfo isEqualToDictionary:locationInfo]) {
+        _locationInfo = locationInfo;
+        self.title = [locationInfo objectForKey:FLICKR_PLACE_NAME];
+        [self setNeedsReloadData];
     }
-    return self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,32 +33,22 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-*/
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake([[self.locationInfo objectForKey:FLICKR_LATITUDE] doubleValue], [[self.locationInfo objectForKey:FLICKR_LONGITUDE] doubleValue]);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, DEFAULT_CITY_MAP_RADIUS, DEFAULT_CITY_MAP_RADIUS);
+    [self.mapView setRegion:region];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)startDownloadingPhotos
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    // download photos from selected location
+    dispatch_queue_t downloadQueue = dispatch_queue_create("photos at place downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        self.photos = [FlickrFetcher photosInPlace:self.locationInfo maxResults:50];
+    });
 }
 
 @end

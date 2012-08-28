@@ -242,12 +242,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="30p-38-EF2" kind="relationship" relationship="viewControllers" id="ef5-lT-QgE"/>
-                        <segue destination="3lN-kr-zqf" kind="relationship" relationship="viewControllers" id="Eom-13-JMQ"/>
+                        <segue destination="30p-38-EF2" kind="relationship" relationship="viewControllers" id="bV4-Ny-fRD"/>
+                        <segue destination="3lN-kr-zqf" kind="relationship" relationship="viewControllers" id="Qll-6M-RjF"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="132" y="1400"/>
+            <point key="canvasLocation" x="132" y="1492"/>
         </scene>
         <scene sceneID="eb1-0j-EAf">
             <objects>
@@ -442,7 +442,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eie-dK-uTJ"/>
+        <segue reference="9rH-PQ-J4u"/>
         <segue reference="HvP-W7-sJK"/>
     </inferredMetricsTieBreakers>
 </document>

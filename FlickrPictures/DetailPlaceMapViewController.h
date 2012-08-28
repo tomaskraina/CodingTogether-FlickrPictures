@@ -9,5 +9,5 @@
 #import "PhotosMapViewController.h"
 
 @interface DetailPlaceMapViewController : PhotosMapViewController
-
+@property (copy, nonatomic) NSDictionary *locationInfo;
 @end

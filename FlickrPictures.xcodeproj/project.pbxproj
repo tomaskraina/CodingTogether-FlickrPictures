@@ -14,6 +14,8 @@
 		2C47352715ECC8C900222072 /* PhotosMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C47352615ECC8C900222072 /* PhotosMapViewController.m */; };
 		2C47352A15ECC8E000222072 /* RecentsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C47352915ECC8E000222072 /* RecentsMapViewController.m */; };
 		2C47352D15ECC93000222072 /* DetailPlaceMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C47352C15ECC93000222072 /* DetailPlaceMapViewController.m */; };
+		2C47353415ECCEF700222072 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C47353315ECCEF700222072 /* MapAnnotation.m */; };
+		2C47353615ECDAA300222072 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C47353515ECDAA300222072 /* CoreLocation.framework */; };
 		2C6EABE915EAC31A00B3EABC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6EABE815EAC31A00B3EABC /* UIKit.framework */; };
 		2C6EABEB15EAC31A00B3EABC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6EABEA15EAC31A00B3EABC /* Foundation.framework */; };
 		2C6EABED15EAC31A00B3EABC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6EABEC15EAC31A00B3EABC /* CoreGraphics.framework */; };
@@ -47,8 +49,11 @@
 		2C47352615ECC8C900222072 /* PhotosMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosMapViewController.m; sourceTree = "<group>"; };
 		2C47352815ECC8E000222072 /* RecentsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsMapViewController.h; sourceTree = "<group>"; };
 		2C47352915ECC8E000222072 /* RecentsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentsMapViewController.m; sourceTree = "<group>"; };
-		2C47352B15ECC93000222072 /* DetailPlaceMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DetailPlaceMapViewController.h; sourceTree = "<group>"; };
+		2C47352B15ECC93000222072 /* DetailPlaceMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPlaceMapViewController.h; sourceTree = "<group>"; };
 		2C47352C15ECC93000222072 /* DetailPlaceMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPlaceMapViewController.m; sourceTree = "<group>"; };
+		2C47353215ECCEF700222072 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		2C47353315ECCEF700222072 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		2C47353515ECDAA300222072 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2C6EABE415EAC31A00B3EABC /* FlickrPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6EABE815EAC31A00B3EABC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2C6EABEA15EAC31A00B3EABC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C47353615ECDAA300222072 /* CoreLocation.framework in Frameworks */,
 				2C47351E15ECBE3500222072 /* MapKit.framework in Frameworks */,
 				2C6EABE915EAC31A00B3EABC /* UIKit.framework in Frameworks */,
 				2C6EABEB15EAC31A00B3EABC /* Foundation.framework in Frameworks */,
@@ -126,6 +132,8 @@
 				2C47352915ECC8E000222072 /* RecentsMapViewController.m */,
 				2C47352B15ECC93000222072 /* DetailPlaceMapViewController.h */,
 				2C47352C15ECC93000222072 /* DetailPlaceMapViewController.m */,
+				2C47353215ECCEF700222072 /* MapAnnotation.h */,
+				2C47353315ECCEF700222072 /* MapAnnotation.m */,
 			);
 			name = MapKitBasedViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 		2C6EABE715EAC31A00B3EABC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C47353515ECDAA300222072 /* CoreLocation.framework */,
 				2C47351D15ECBE3500222072 /* MapKit.framework */,
 				2C6EABE815EAC31A00B3EABC /* UIKit.framework */,
 				2C6EABEA15EAC31A00B3EABC /* Foundation.framework */,
@@ -295,6 +304,7 @@
 				2C47352715ECC8C900222072 /* PhotosMapViewController.m in Sources */,
 				2C47352A15ECC8E000222072 /* RecentsMapViewController.m in Sources */,
 				2C47352D15ECC93000222072 /* DetailPlaceMapViewController.m in Sources */,
+				2C47353415ECCEF700222072 /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
