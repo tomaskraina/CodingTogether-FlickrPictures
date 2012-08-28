@@ -26,6 +26,7 @@
 		2C6EAC3215EB77A600B3EABC /* UITabBarController+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC3115EB77A500B3EABC /* UITabBarController+Rotation.m */; };
 		2C6EAC3515EB7B7100B3EABC /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */; };
 		2C6EAC4715EBCBAA00B3EABC /* ActivityIndicatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC4615EBCBA900B3EABC /* ActivityIndicatorTableViewController.m */; };
+		2C6EAC4A15EC3C2A00B3EABC /* FileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EAC4915EC3C2900B3EABC /* FileCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		2C6EAC4515EBCBA900B3EABC /* ActivityIndicatorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorTableViewController.h; sourceTree = "<group>"; };
 		2C6EAC4615EBCBA900B3EABC /* ActivityIndicatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorTableViewController.m; sourceTree = "<group>"; };
+		2C6EAC4815EC3C2800B3EABC /* FileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCache.h; sourceTree = "<group>"; };
+		2C6EAC4915EC3C2900B3EABC /* FileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */,
 				2C6EAC2D15EB641700B3EABC /* SinglePhotoViewController.h */,
 				2C6EAC2E15EB641800B3EABC /* SinglePhotoViewController.m */,
+				2C6EAC4815EC3C2800B3EABC /* FileCache.h */,
+				2C6EAC4915EC3C2900B3EABC /* FileCache.m */,
 				2C6EAC0415EAC31A00B3EABC /* RecentsViewController.h */,
 				2C6EAC0515EAC31A00B3EABC /* RecentsViewController.m */,
 				2C6EAC1115EAC47D00B3EABC /* FlickrFetcher */,
@@ -239,6 +244,7 @@
 				2C6EAC3215EB77A600B3EABC /* UITabBarController+Rotation.m in Sources */,
 				2C6EAC3515EB7B7100B3EABC /* PhotosViewController.m in Sources */,
 				2C6EAC4715EBCBAA00B3EABC /* ActivityIndicatorTableViewController.m in Sources */,
+				2C6EAC4A15EC3C2A00B3EABC /* FileCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
