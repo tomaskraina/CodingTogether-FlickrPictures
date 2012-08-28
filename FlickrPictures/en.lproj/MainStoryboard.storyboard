@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="l2W-Ps-kJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -39,7 +39,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="6Sh-7h-bRn" kind="push" identifier="Show photos at location" id="xU3-OC-yJu"/>
+                                    <segue destination="Hxk-Mo-JQ1" kind="push" identifier="Show photos on the map" id="OtU-bV-NkM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,7 +88,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="lfj-6j-O9k" kind="push" identifier="Show photo" id="HvP-W7-sJK"/>
+                                    <segue destination="mAQ-yo-iti" kind="push" identifier="Show photo on the map" id="frg-9g-NRY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -100,34 +100,7 @@
                     <navigationItem key="navigationItem" id="uxd-9W-zVZ"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1466" y="-103"/>
-        </scene>
-        <scene sceneID="faI-7Z-lQO">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="STs-K3-Iol" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="lfj-6j-O9k" customClass="SinglePhotoViewController" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="-5" id="aBu-xg-Pn0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" id="jLq-ib-wZU">
-                                <rect key="frame" x="-1" y="1" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="delegate" destination="lfj-6j-O9k" id="J2i-i6-vdq"/>
-                        </connections>
-                    </scrollView>
-                    <navigationItem key="navigationItem" id="xLb-B4-b0t"/>
-                    <connections>
-                        <outlet property="imageView" destination="jLq-ib-wZU" id="dwl-M5-yib"/>
-                        <outlet property="scrollView" destination="aBu-xg-Pn0" id="40L-vI-ERv"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2446" y="180"/>
+            <point key="canvasLocation" x="1978" y="-98"/>
         </scene>
         <scene sceneID="2sw-5z-3Ws">
             <objects>
@@ -163,7 +136,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="lfj-6j-O9k" kind="push" identifier="Show photo" id="5IJ-te-oHp"/>
+                                    <segue destination="zcC-Xa-NA9" kind="push" identifier="Show photo on the map" id="vfb-Ga-FWJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -175,7 +148,7 @@
                     <navigationItem key="navigationItem" title="Recent Photos" id="xAB-NX-DsT"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1330" y="494"/>
+            <point key="canvasLocation" x="1134" y="494"/>
         </scene>
         <scene sceneID="15">
             <objects>
@@ -229,43 +202,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="844" y="494"/>
-        </scene>
-        <scene sceneID="gTX-BP-4Ry">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gDW-YH-W02" sceneMemberID="firstResponder"/>
-                <tabBarController id="l2W-Ps-kJg" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hk9-nx-y2R">
-                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="30p-38-EF2" kind="relationship" relationship="viewControllers" id="bV4-Ny-fRD"/>
-                        <segue destination="3lN-kr-zqf" kind="relationship" relationship="viewControllers" id="Qll-6M-RjF"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="132" y="1492"/>
-        </scene>
-        <scene sceneID="eb1-0j-EAf">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sAo-eY-ZxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="30p-38-EF2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="bq0-9V-3Tc"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oNR-gz-Q1V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Hxk-Mo-JQ1" kind="relationship" relationship="rootViewController" id="aqz-gt-rJF"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="653" y="1098"/>
+            <point key="canvasLocation" x="724" y="494"/>
         </scene>
         <scene sceneID="9KI-Hd-afw">
             <objects>
@@ -288,29 +225,11 @@
                     <navigationItem key="navigationItem" title="Top Places" id="wee-ed-ImP"/>
                     <connections>
                         <outlet property="mapView" destination="ZfF-2H-8yM" id="4Za-JU-ex2"/>
-                        <segue destination="mAQ-yo-iti" kind="push" identifier="Show photos at location" id="c9s-dO-0zc"/>
+                        <segue destination="6Sh-7h-bRn" kind="push" identifier="Show photos at location" id="BAN-tk-TMS"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1108" y="1100"/>
-        </scene>
-        <scene sceneID="ylm-2c-6UL">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JQd-PC-2ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="3lN-kr-zqf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="X3s-Uw-3iU"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bMC-Kd-XN0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zcC-Xa-NA9" kind="relationship" relationship="rootViewController" id="lM0-V0-Ciu"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="653" y="1702"/>
+            <point key="canvasLocation" x="1528" y="-98"/>
         </scene>
         <scene sceneID="YTP-m7-Gyt">
             <objects>
@@ -337,7 +256,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1572" y="1100"/>
+            <point key="canvasLocation" x="2416" y="-104"/>
         </scene>
         <scene sceneID="DNj-Y1-jYN">
             <objects>
@@ -364,7 +283,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2058" y="1400"/>
+            <point key="canvasLocation" x="2890" y="494"/>
         </scene>
         <scene sceneID="Jbb-vX-6xE">
             <objects>
@@ -391,7 +310,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1108" y="1716"/>
+            <point key="canvasLocation" x="1560" y="494"/>
         </scene>
     </scenes>
     <resources>
@@ -443,6 +362,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="9rH-PQ-J4u"/>
-        <segue reference="HvP-W7-sJK"/>
     </inferredMetricsTieBreakers>
 </document>

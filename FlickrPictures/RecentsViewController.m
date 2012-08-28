@@ -8,6 +8,7 @@
 
 #import "RecentsViewController.h"
 #import "FlickrFetcher.h"
+#import "RecentsMapViewController.h"
 
 #define PHOTOS_PERSISTENCE_KEY @"RecentsViewController.photos"
 
@@ -50,6 +51,17 @@
     [super viewDidLoad];
     
     [self loadDownloadedPhotos];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    
+    if ([segue.identifier isEqualToString:@"Show photo on the map"]) {
+        RecentsMapViewController *mapViewController = (RecentsMapViewController *)segue.destinationViewController;
+        mapViewController.photos = self.photos;
+        mapViewController.selectedPhoto = [self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row];
+    }
 }
 
 @end

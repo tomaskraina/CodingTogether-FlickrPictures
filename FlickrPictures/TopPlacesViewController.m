@@ -9,6 +9,7 @@
 #import "TopPlacesViewController.h"
 #import "FlickrFetcher.h"
 #import "DetailPlaceViewController.h"
+#import "TopPlacesMapViewController.h"
 
 @interface TopPlacesViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSArray *places;
@@ -148,6 +149,16 @@
             NSArray *placesForCountry = [self.placesByCountries objectForKey:country];
             DetailPlaceViewController *detailViewController = (DetailPlaceViewController *)segue.destinationViewController;
             detailViewController.locationInfo = [placesForCountry objectAtIndex:indexPath.row];
+        }
+    }
+    
+    if ([segue.identifier isEqualToString:@"Show photos on the map"]) {
+        if ([sender isKindOfClass:[UITableViewCell class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            NSString *country = [self.countries objectAtIndex:indexPath.section];
+            NSArray *placesForCountry = [self.placesByCountries objectForKey:country];
+            TopPlacesMapViewController *mapViewController = (TopPlacesMapViewController *)segue.destinationViewController;
+            mapViewController.selectedPlace = [placesForCountry objectAtIndex:indexPath.row];
         }
     }
 }

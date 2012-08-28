@@ -9,6 +9,7 @@
 #import "DetailPlaceViewController.h"
 #import "FlickrFetcher.h"
 #import "SinglePhotoViewController.h"
+#import "DetailPlaceMapViewController.h"
 
 @implementation DetailPlaceViewController
 @synthesize locationInfo = _locationInfo;
@@ -36,6 +37,18 @@
     dispatch_async(downloadQueue, ^{
         self.photos = [FlickrFetcher photosInPlace:self.locationInfo maxResults:50];
     });
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    
+    if ([segue.identifier isEqualToString:@"Show photo on the map"]) {
+        DetailPlaceMapViewController *detailViewController = (DetailPlaceMapViewController *)segue.destinationViewController;
+        detailViewController.locationInfo = self.locationInfo;
+        detailViewController.photos = self.photos;
+        detailViewController.selectedPhoto = [self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row];
+    }
 }
 
 @end

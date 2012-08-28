@@ -9,5 +9,5 @@
 #import "BaseMapViewController.h"
 
 @interface TopPlacesMapViewController : BaseMapViewController
-
+@property (strong, nonatomic) NSDictionary *selectedPlace;
 @end

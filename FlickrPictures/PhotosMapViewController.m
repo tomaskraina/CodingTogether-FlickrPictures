@@ -21,6 +21,7 @@
 @synthesize photos = _photos;
 @synthesize cache = _cache;
 @synthesize needsReloadData = _needsReloadData;
+@synthesize selectedPhoto = _selectedPhoto;
 
 - (void)setNeedsReloadData
 {
@@ -106,8 +107,10 @@
 {
     [super viewDidLoad];
     
-    [self.activityIndicator startAnimating];
-    [self startDownloadingPhotos];
+    if (!self.photos) {
+        [self.activityIndicator startAnimating];
+        [self startDownloadingPhotos];
+    }
     self.needsReloadData = NO;
 }
 
@@ -181,6 +184,18 @@
     
 }
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    if (self.selectedPhoto) {
+        for (MKAnnotationView *view in views) {
+            MapAnnotation *annotation = (MapAnnotation *)view.annotation;
+            if ([annotation.infoDictionary isEqualToDictionary:self.selectedPhoto]) {
+                [self.mapView selectAnnotation:annotation animated:YES];
+                break;
+            }
+        }
+    }
+}
 
 #pragma mark - UIStoryboardSegue
 

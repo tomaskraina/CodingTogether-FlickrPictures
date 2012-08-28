@@ -10,6 +10,7 @@
 #import "FlickrFetcher.h"
 #import "MapAnnotation.h"
 #import "DetailPlaceMapViewController.h"
+#import "DetailPlaceViewController.h"
 
 @interface TopPlacesMapViewController()
 @property (strong, nonatomic) NSArray *places;
@@ -17,6 +18,7 @@
 
 @implementation TopPlacesMapViewController
 @synthesize places = _places;
+@synthesize selectedPlace = _selectedPlace;
 
 - (void)setPlaces:(NSArray *)places
 {
@@ -32,10 +34,7 @@
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([[placeInfo objectForKey:FLICKR_LATITUDE] doubleValue], [[placeInfo objectForKey:FLICKR_LONGITUDE] doubleValue]);
         
         MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:title subtitle:subtitle coordinate:coordinate info:placeInfo];
-        
-//        if (![self.mapView.annotations containsObject:annotation]) {
-            [annotations addObject:annotation];
-//        }
+        [annotations addObject:annotation];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -73,11 +72,14 @@
     [super viewDidLoad];
     
     // download the list of photos from flicker in another thread
-    [self.activityIndicator startAnimating];
-    dispatch_queue_t downloadQueue = dispatch_queue_create("top places downloader", NULL);
-    dispatch_async(downloadQueue, ^{
-        self.places = [FlickrFetcher topPlaces];
-    });
+    if (!self.places) {
+        [self.activityIndicator startAnimating];
+        dispatch_queue_t downloadQueue = dispatch_queue_create("top places downloader", NULL);
+        dispatch_async(downloadQueue, ^{
+            self.places = [FlickrFetcher topPlaces];
+        });
+
+    }
 }
 
 
@@ -103,10 +105,6 @@
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:Identifier];
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.canShowCallout = YES;
-//        annotationView.leftCalloutAccessoryView = [[UIImageView alloc] init];
-    }
-    else {
-//        ((UIImageView *)annotationView.leftCalloutAccessoryView).image = nil;
     }
     
     return annotationView;
@@ -124,18 +122,40 @@
 
 }
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    if (self.selectedPlace) {
+        for (MKAnnotationView *view in views) {
+            MapAnnotation *annotation = (MapAnnotation *)view.annotation;
+            if ([annotation.infoDictionary isEqualToDictionary:self.selectedPlace]) {
+                [self.mapView selectAnnotation:annotation animated:YES];
+                break;
+            }
+        }
+    }
+}
+
 #pragma mark - UIStoryboardSegue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Show photos at location"]) {
+    if ([segue.identifier isEqualToString:@"Show photos at location at the map"]) {
         if ([sender isKindOfClass:[MKAnnotationView class]]) {
             MapAnnotation *annotation = [(MKAnnotationView *)sender annotation];
             DetailPlaceMapViewController *detailViewController = (DetailPlaceMapViewController *)segue.destinationViewController;
             detailViewController.locationInfo = annotation.infoDictionary;
         }
     }
+    else if ([segue.identifier isEqualToString:@"Show photos at location"]) {
+        if ([sender isKindOfClass:[MKAnnotationView class]]) {
+            MapAnnotation *annotation = [(MKAnnotationView *)sender annotation];
+            DetailPlaceViewController *detailViewController = (DetailPlaceViewController *)segue.destinationViewController;
+            detailViewController.locationInfo = annotation.infoDictionary;
+        }
+    }
 }
+
+
 
 
 @end

@@ -9,6 +9,7 @@
 #import "PhotosViewController.h"
 #import "FlickrFetcher.h"
 #import "SinglePhotoViewController.h"
+#import "DetailPlaceMapViewController.h"
 
 @interface PhotosViewController() <UITableViewDelegate, UITableViewDataSource>
 @end

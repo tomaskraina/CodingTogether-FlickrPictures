@@ -8,11 +8,11 @@
 
 #import "DetailPlaceMapViewController.h"
 #import "FlickrFetcher.h"
+#import "MapAnnotation.h"
 #define DEFAULT_CITY_MAP_RADIUS 30000 // in meters
 
 @implementation DetailPlaceMapViewController
 @synthesize locationInfo = _locationInfo;
-
 
 - (void)setLocationInfo:(NSDictionary *)locationInfo
 {
