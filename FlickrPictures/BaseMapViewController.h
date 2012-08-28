@@ -12,5 +12,8 @@
 
 @interface BaseMapViewController : UIViewController <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeControl;
 - (MKMapRect) mapRectForAnnotations:(NSArray*)annotationsArray;
+// segmentIndex: 0 - MKMapTypeNormal, 1 - MKMapTypeSatellite, 2 - MKMapTypeHybrid
+- (IBAction)changeMapType:(UISegmentedControl *)sender;
 @end

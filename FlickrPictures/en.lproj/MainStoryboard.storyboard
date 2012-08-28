@@ -219,17 +219,30 @@
                                     <outlet property="delegate" destination="Hxk-Mo-JQ1" id="aMG-U0-lW9"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="aLw-hf-jEp">
+                                <rect key="frame" x="44" y="318" width="232" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="Hxk-Mo-JQ1" eventType="valueChanged" id="vzm-hn-Tpi"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Top Places" id="wee-ed-ImP"/>
                     <connections>
+                        <outlet property="mapTypeControl" destination="aLw-hf-jEp" id="NJP-sU-RoB"/>
                         <outlet property="mapView" destination="ZfF-2H-8yM" id="4Za-JU-ex2"/>
                         <segue destination="6Sh-7h-bRn" kind="push" identifier="Show photos at location" id="BAN-tk-TMS"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1528" y="-98"/>
+            <point key="canvasLocation" x="1528" y="-90"/>
         </scene>
         <scene sceneID="YTP-m7-Gyt">
             <objects>
@@ -246,11 +259,24 @@
                                     <outlet property="delegate" destination="mAQ-yo-iti" id="HHL-I4-76D"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="y9H-y3-pWD">
+                                <rect key="frame" x="44" y="318" width="232" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="mAQ-yo-iti" eventType="valueChanged" id="QeV-q1-jln"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="72n-Dw-xpZ"/>
                     <connections>
+                        <outlet property="mapTypeControl" destination="y9H-y3-pWD" id="e97-Gk-erD"/>
                         <outlet property="mapView" destination="tAd-vv-94T" id="O9x-e9-f0p"/>
                         <segue destination="0cR-Ja-LGn" kind="push" identifier="Show photo" id="eie-dK-uTJ"/>
                     </connections>
@@ -300,11 +326,24 @@
                                     <outlet property="delegate" destination="zcC-Xa-NA9" id="0iE-zq-1Mh"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="a9H-6m-WQs">
+                                <rect key="frame" x="55" y="318" width="232" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapType:" destination="zcC-Xa-NA9" eventType="valueChanged" id="sNm-zN-cdi"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recents" id="Zau-2s-rys"/>
                     <connections>
+                        <outlet property="mapTypeControl" destination="a9H-6m-WQs" id="HSp-Fh-x34"/>
                         <outlet property="mapView" destination="TLZ-xW-X5n" id="Hi2-Im-qvd"/>
                         <segue destination="0cR-Ja-LGn" kind="push" identifier="Show photo" id="9rH-PQ-J4u"/>
                     </connections>
@@ -320,6 +359,8 @@
         <class className="BaseMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseMapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changeMapType:" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="mapTypeControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
@@ -361,6 +402,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9rH-PQ-J4u"/>
+        <segue reference="eie-dK-uTJ"/>
     </inferredMetricsTieBreakers>
 </document>

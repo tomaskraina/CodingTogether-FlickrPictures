@@ -7,9 +7,30 @@
 //
 
 #import "BaseMapViewController.h"
+#define MAP_TYPE_CONTROL_PERSISTENT_KEY @"BaseMapViewController.mapTypeControl"
 
 @implementation BaseMapViewController
 @synthesize mapView = _mapView;
+@synthesize mapTypeControl = _mapTypeControl;
+
+- (IBAction)changeMapType:(UISegmentedControl *)sender
+{
+    switch (sender.selectedSegmentIndex) {
+        case 1:
+            self.mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;            
+        default:
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:sender.selectedSegmentIndex forKey:MAP_TYPE_CONTROL_PERSISTENT_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+}
 
 - (MKMapRect) mapRectForAnnotations:(NSArray*)annotationsArray
 {
@@ -31,6 +52,14 @@
     }
     
     return mapRect;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.mapTypeControl.selectedSegmentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:MAP_TYPE_CONTROL_PERSISTENT_KEY];
+    [self changeMapType:self.mapTypeControl];
 }
 
 @end
