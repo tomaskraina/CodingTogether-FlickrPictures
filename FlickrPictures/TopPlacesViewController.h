@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ActivityIndicatorTableViewController.h"
+#import "UIViewController+ActivityIndicatorAsRightBarButtonItem.h"
 
-@interface TopPlacesViewController : ActivityIndicatorTableViewController
+@interface TopPlacesViewController : UITableViewController
 
 @end

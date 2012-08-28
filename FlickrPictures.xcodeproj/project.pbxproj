@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C47351C15ECBDE000222072 /* BaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C47351B15ECBDE000222072 /* BaseMapViewController.m */; };
+		2C47351E15ECBE3500222072 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C47351D15ECBE3500222072 /* MapKit.framework */; };
+		2C47352115ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C47352015ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.m */; };
 		2C6EABE915EAC31A00B3EABC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6EABE815EAC31A00B3EABC /* UIKit.framework */; };
 		2C6EABEB15EAC31A00B3EABC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6EABEA15EAC31A00B3EABC /* Foundation.framework */; };
 		2C6EABED15EAC31A00B3EABC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6EABEC15EAC31A00B3EABC /* CoreGraphics.framework */; };
@@ -30,6 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C47351A15ECBDE000222072 /* BaseMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapViewController.h; sourceTree = "<group>"; };
+		2C47351B15ECBDE000222072 /* BaseMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapViewController.m; sourceTree = "<group>"; };
+		2C47351D15ECBE3500222072 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C47351F15ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ActivityIndicatorAsRightBarButtonItem.h"; sourceTree = "<group>"; };
+		2C47352015ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ActivityIndicatorAsRightBarButtonItem.m"; sourceTree = "<group>"; };
 		2C6EABE415EAC31A00B3EABC /* FlickrPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6EABE815EAC31A00B3EABC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2C6EABEA15EAC31A00B3EABC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C47351E15ECBE3500222072 /* MapKit.framework in Frameworks */,
 				2C6EABE915EAC31A00B3EABC /* UIKit.framework in Frameworks */,
 				2C6EABEB15EAC31A00B3EABC /* Foundation.framework in Frameworks */,
 				2C6EABED15EAC31A00B3EABC /* CoreGraphics.framework in Frameworks */,
@@ -80,6 +89,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C47351715ECBB4D00222072 /* TableBasedViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C6EAC4515EBCBA900B3EABC /* ActivityIndicatorTableViewController.h */,
+				2C6EAC4615EBCBA900B3EABC /* ActivityIndicatorTableViewController.m */,
+				2C6EABFD15EAC31A00B3EABC /* TopPlacesViewController.h */,
+				2C6EABFE15EAC31A00B3EABC /* TopPlacesViewController.m */,
+				2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */,
+				2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */,
+				2C6EAC3315EB7B7000B3EABC /* PhotosViewController.h */,
+				2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */,
+				2C6EAC0415EAC31A00B3EABC /* RecentsViewController.h */,
+				2C6EAC0515EAC31A00B3EABC /* RecentsViewController.m */,
+			);
+			name = TableBasedViewControllers;
+			sourceTree = "<group>";
+		};
+		2C47351915ECBB7A00222072 /* MapKitBasedViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C47351A15ECBDE000222072 /* BaseMapViewController.h */,
+				2C47351B15ECBDE000222072 /* BaseMapViewController.m */,
+			);
+			name = MapKitBasedViewControllers;
+			sourceTree = "<group>";
+		};
 		2C6EABD915EAC31A00B3EABC = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +135,7 @@
 		2C6EABE715EAC31A00B3EABC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C47351D15ECBE3500222072 /* MapKit.framework */,
 				2C6EABE815EAC31A00B3EABC /* UIKit.framework */,
 				2C6EABEA15EAC31A00B3EABC /* Foundation.framework */,
 				2C6EABEC15EAC31A00B3EABC /* CoreGraphics.framework */,
@@ -111,20 +147,14 @@
 			isa = PBXGroup;
 			children = (
 				2C6EABFA15EAC31A00B3EABC /* MainStoryboard.storyboard */,
-				2C6EAC4515EBCBA900B3EABC /* ActivityIndicatorTableViewController.h */,
-				2C6EAC4615EBCBA900B3EABC /* ActivityIndicatorTableViewController.m */,
-				2C6EABFD15EAC31A00B3EABC /* TopPlacesViewController.h */,
-				2C6EABFE15EAC31A00B3EABC /* TopPlacesViewController.m */,
-				2C6EAC1615EAD09300B3EABC /* DetailPlaceViewController.h */,
-				2C6EAC1715EAD09300B3EABC /* DetailPlaceViewController.m */,
-				2C6EAC3315EB7B7000B3EABC /* PhotosViewController.h */,
-				2C6EAC3415EB7B7000B3EABC /* PhotosViewController.m */,
+				2C47351715ECBB4D00222072 /* TableBasedViewControllers */,
+				2C47351915ECBB7A00222072 /* MapKitBasedViewControllers */,
 				2C6EAC2D15EB641700B3EABC /* SinglePhotoViewController.h */,
 				2C6EAC2E15EB641800B3EABC /* SinglePhotoViewController.m */,
 				2C6EAC4815EC3C2800B3EABC /* FileCache.h */,
 				2C6EAC4915EC3C2900B3EABC /* FileCache.m */,
-				2C6EAC0415EAC31A00B3EABC /* RecentsViewController.h */,
-				2C6EAC0515EAC31A00B3EABC /* RecentsViewController.m */,
+				2C47351F15ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.h */,
+				2C47352015ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.m */,
 				2C6EAC1115EAC47D00B3EABC /* FlickrFetcher */,
 				2C6EAC1015EAC33400B3EABC /* Resources */,
 				2C6EABEF15EAC31A00B3EABC /* Supporting Files */,
@@ -245,6 +275,8 @@
 				2C6EAC3515EB7B7100B3EABC /* PhotosViewController.m in Sources */,
 				2C6EAC4715EBCBAA00B3EABC /* ActivityIndicatorTableViewController.m in Sources */,
 				2C6EAC4A15EC3C2A00B3EABC /* FileCache.m in Sources */,
+				2C47351C15ECBDE000222072 /* BaseMapViewController.m in Sources */,
+				2C47352115ECC1FE00222072 /* UIViewController+ActivityIndicatorAsRightBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

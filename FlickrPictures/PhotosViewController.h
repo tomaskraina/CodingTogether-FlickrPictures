@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ActivityIndicatorTableViewController.h"
+#import "UIViewController+ActivityIndicatorAsRightBarButtonItem.h"
 
-@interface PhotosViewController : ActivityIndicatorTableViewController
+@interface PhotosViewController : UITableViewController
 @property (strong, nonatomic) NSArray *photos;
 // implement this method in your subclass
 // activity indicator animation is automatically started before this method is called
